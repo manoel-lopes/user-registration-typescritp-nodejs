@@ -1,7 +1,6 @@
 {
   "name": "user-registration-typescritp-nodejs",
   "version": "1.0.0",
-  "description": "A Node JS API, developed with TypeScript + Type ORM + PostgresSQL to be consumed by both a UI of a user registration application developed with Next JS",
   "main": "index.js",
   "repository": "https://github.com/manoel-lopes/user-registration-typescritp-nodejs.git",
   "author": "",
