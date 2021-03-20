@@ -5,6 +5,9 @@
   "repository": "https://github.com/manoel-lopes/user-registration-typescript-nodejs.git",
   "author": "manoel-lopes <manoafonso.lopes@hotmail.com>",
   "license": "MIT",
+  "scripts": {
+    "dev": "ts-node-dev src/server.ts"
+  },
   "dependencies": {
     "express": "^4.17.1"
   },
