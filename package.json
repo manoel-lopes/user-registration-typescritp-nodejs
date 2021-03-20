@@ -4,5 +4,13 @@
   "main": "index.js",
   "repository": "https://github.com/manoel-lopes/user-registration-typescript-nodejs.git",
   "author": "manoel-lopes <manoafonso.lopes@hotmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.11",
+    "ts-node-dev": "^1.1.6",
+    "typescript": "^4.2.3"
+  }
 }
