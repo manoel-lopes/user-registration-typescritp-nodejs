@@ -1,8 +1,8 @@
 {
-  "name": "user-registration-typescritp-nodejs",
+  "name": "user-registration-typescript-nodejs",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://github.com/manoel-lopes/user-registration-typescritp-nodejs.git",
-  "author": "",
+  "repository": "https://github.com/manoel-lopes/user-registration-typescript-nodejs.git",
+  "author": "manoel-lopes <manoafonso.lopes@hotmail.com>",
   "license": "MIT"
 }
