@@ -4,6 +4,16 @@ import { getCustomRepository } from 'typeorm'
 import { UserRepository } from '../repositories/UserRepository'
 
 class UserController {
+  async show(req: Request, resp: Response) {
+    const userRepository = getCustomRepository(UserRepository)
+
+    const user = await userRepository.findOne(req.params.id)
+    
+    return user
+      ? resp.json(user)
+      : resp.status(404).json({ error: 'User not found!' })
+  }
+
   async store(req: Request, resp: Response) {
     const { name = '', email = '' } = req.body
 
