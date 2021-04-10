@@ -4,6 +4,16 @@ import { getCustomRepository } from 'typeorm'
 import { UserRepository } from '../repositories/UserRepository'
 
 class UserController {
+  async index(_, resp) {
+    const userRepository = getCustomRepository(UserRepository)
+    
+    const users = await userRepository.find()
+
+    return users.length
+      ? resp.json(users)
+      : resp.status(400).json({ error: "The user list it's empty!" })
+  }
+  
   async show(req: Request, resp: Response) {
     const userRepository = getCustomRepository(UserRepository)
 
