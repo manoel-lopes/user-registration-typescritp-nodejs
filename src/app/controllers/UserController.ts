@@ -67,17 +67,17 @@ class UserController {
     
     const user = await userRepository.findByIds([id])
 
-    if (user.length) {
-      await userRepository.save({
-        id,
-        name, 
-        email
-      })
-      return resp.json(user)
-
-    } else {
+    if (!user.length) {
       return resp.status(404).json({ error: 'User not found!' })
     }
+
+    await userRepository.save({
+      id,
+      name, 
+      email
+    })
+    
+    return resp.json(user)
   }
 }
 
