@@ -67,7 +67,7 @@ class UserController {
     
     const users = await userRepository.findByIds([id])
 
-    if (!users[0]) {
+    if (!users.length) {
       return resp.status(404).json({ error: 'User not found!' })
     }
 
