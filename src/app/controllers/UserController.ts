@@ -65,9 +65,9 @@ class UserController {
     
     const userRepository = getCustomRepository(UserRepository)
     
-    const user = await userRepository.findByIds([id])
+    const users = await userRepository.findByIds([id])
 
-    if (!user.length) {
+    if (!users[0]) {
       return resp.status(404).json({ error: 'User not found!' })
     }
 
@@ -77,7 +77,7 @@ class UserController {
       email
     })
     
-    return resp.json(user)
+    return resp.json(users[0])
   }
 }
 
