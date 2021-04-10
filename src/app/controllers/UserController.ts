@@ -15,9 +15,11 @@ class UserController {
   }
   
   async show(req: Request, resp: Response) {
+    const { id } = req.params
+
     const userRepository = getCustomRepository(UserRepository)
 
-    const user = await userRepository.findOne(req.params.id)
+    const user = await userRepository.findOne(id)
     
     return user
       ? resp.json(user)
