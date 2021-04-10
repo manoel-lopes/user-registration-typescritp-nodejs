@@ -64,18 +64,20 @@ class UserController {
     const { name, email } = req.body
     
     const userRepository = getCustomRepository(UserRepository)
+    
+    const user = await userRepository.findByIds([id])
 
-    await userRepository.save({
-      id,
-      name, 
-      email
-    })
+    if (user.length) {
+      await userRepository.save({
+        id,
+        name, 
+        email
+      })
+      return resp.json(user)
 
-    const newUser = await userRepository.findByIds([id])
-
-    return newUser
-      ? resp.json(newUser)
-      : resp.status(404).json({ error: 'User not found!' })
+    } else {
+      return resp.status(404).json({ error: 'User not found!' })
+    }
   }
 }
 
