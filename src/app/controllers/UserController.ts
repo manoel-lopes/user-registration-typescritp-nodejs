@@ -55,8 +55,6 @@ class UserController {
     if (emailAlreadyRegistered) {
       return resp.status(400).json({ error: 'Email already in use!' })
     }
-
-    await userRepository.save(user)
     
     return resp.json(user)
   }
@@ -67,9 +65,9 @@ class UserController {
     
     const userRepository = getCustomRepository(UserRepository)
     
-    const users = await userRepository.findByIds([id])
+    const user = await userRepository.findOne(id)
 
-    if (!users.length) {
+    if (!user) {
       return resp.status(404).json({ error: 'User not found!' })
     }
 
@@ -78,8 +76,9 @@ class UserController {
       name, 
       email
     })
-    
-    return resp.json(users[0])
+
+    const newUser = await userRepository.findOne(id)
+    return resp.json(newUser)
   }
 }
 
