@@ -60,7 +60,7 @@ class UserController {
   }
 
   async update(req: Request, resp: Response) {
-    const id = req.params.id
+    const { id } = req.params
     const { name, email } = req.body
     
     const userRepository = getCustomRepository(UserRepository)
