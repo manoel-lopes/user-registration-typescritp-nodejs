@@ -80,6 +80,21 @@ class UserController {
     const newUser = await userRepository.findOne(id)
     return resp.json(newUser)
   }
+
+  async delete(req: Request, resp: Response) {
+    const { id } = req.params
+    
+    const userRepository = getCustomRepository(UserRepository)
+    
+    const user = await userRepository.findOne(id)
+
+    if (!user) {
+      return resp.status(404).json({ error: 'User not found!' })
+    }
+
+    await userRepository.delete(id)
+    return resp.json({ success: 'User has been deleted!' })
+  }
 }
 
 export { UserController }
