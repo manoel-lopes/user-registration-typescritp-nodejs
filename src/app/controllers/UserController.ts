@@ -35,7 +35,7 @@ class UserController {
       return resp.status(400).json({ error: 'Blank field not allowed!' })
     }
 
-    const isValidEmail = email.includes('@') && email.includes('.')
+    const isValidEmail = email.includes('@') && email.includes('.com')
 
     if (!isValidEmail) {
       return resp.status(400).json({ error: 'Invalid email!' })
@@ -46,15 +46,13 @@ class UserController {
       email
     })
 
-    const emailAlreadyRegistered = await userRepository.findOne({
-      where: {
-        email
-      }
-    })
+    const emailAlreadyRegistered = await userRepository.findOne({ email })
 
     if (emailAlreadyRegistered) {
       return resp.status(400).json({ error: 'Email already in use!' })
     }
+
+    await userRepository.save(user)
     
     return resp.json(user)
   }
