@@ -52,8 +52,7 @@ class UserController {
       return resp.status(400).json({ error: 'Email already in use!' })
     }
 
-    await userRepository.save(user)
-    
+    await userRepository.save(user)    
     return resp.json(user)
   }
 
