@@ -53,7 +53,7 @@ class UserController {
     }
 
     await userRepository.save(user)    
-    return resp.json(user)
+    return resp.status(201).json(user)
   }
 
   async update(req: Request, resp: Response) {
