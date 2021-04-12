@@ -37,7 +37,7 @@ create database <database-name>;
 ```
 You can also use SQL Shell or pgAdmin to create your database, as your prefer
 
-- Create the users table
+- Run the migrations to create the project tables
 ```
 npm run typeorm migration:run
 
