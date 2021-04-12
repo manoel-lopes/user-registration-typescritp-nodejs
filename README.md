@@ -1,7 +1,6 @@
-# Start with MENT
-##                                                Mongo Express Node TypeScript
+## Mongo Express Node TypeScript
 
-Rest API using Node and TypeScript
+REST API developed with Node JS + TypeScript + Type ORM + PostgresSQL 
 
 # Pre-reqs
 - Install [Node.js](https://nodejs.org/en/)
@@ -29,5 +28,12 @@ npm run dev
 or
 
 yarn dev
+```
+- Create a `.env` on the root of your project with your database access credentials
+```
+DB_HOST = 'Your host'
+DB_USER = 'Your database username'
+DB_PASS = 'Your database password'
+DB_NAME = 'Your database name'
 ```
 Navigate to `http://localhost:3001`
