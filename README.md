@@ -59,38 +59,10 @@ yarn dev
 
 - List all users - GET: http://localhost:3001/users
 
-   . Em caso de sucesso retorna todos os planetas já cadastrados no banco de dados, cada planeta no formato JSON, contendo nome, clima, terreno e número de aparições.
-
 - Get a user - GET: http://localhost:3001/users/:id
-body:
-
-  {
-	"name": "user",
-   "email": "user@email.com"
-  }
-
-response:
-
-[
-  {
-	"name": "user",
-   "email": "user@email.com"
-  },
-  {
-	"name": "user2",
-   "email": "user2@email.com"
-  },
-]
    
-- Adicionar planeta - POST: http://localhost:3001/users/adicionar 
+- Create a user - POST: http://localhost:3001/users 
   
-  . Adiciona um planeta ao banco de dados, sendo necessário inserir o nome, clima e terreno. O Id é gerado automaticamente, e o número de aparições também é gerado consumindo os dados da API Swapi. Caso o planeta não esteja contido no universo Star Wars, ele será cadastrado como tendo 0 aparições.
-  
-- Buscar planeta por Id - GET: http://localhost:3001/users/id/{inserir-id-aqui}
+- Update a user - GET: http://localhost:3001/users/:id
 
-  . Utiliza o Id gerado automaticamente quando o planeta é adicionado ao banco de dados. Retorna o arquivo no formato JSON com sucesso caso exista. Para essa busca é necessário inserir o Id após /id/.
-     
-- Deletar um planeta por Id - DELETE: http://localhost:3001/users/id/deletar/{inserir-id-aqui}
-
-   . Remove o planeta utilizando o Id que foi gerado automaticamente, utilizando o método DELETE. 
-
+- Delete a user - GET: http://localhost:3001/users/:id
