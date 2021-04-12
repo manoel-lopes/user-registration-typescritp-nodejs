@@ -59,6 +59,8 @@ yarn dev
 
 - List all users - GET: http://localhost:3001/users
 
+If there are registered users on database, it returns an array with all users in JSON format containing the fields id, name, email, created_at and updated_at
+
 - Get a user - GET: http://localhost:3001/users/:id
    
 - Create a user - POST: http://localhost:3001/users 
