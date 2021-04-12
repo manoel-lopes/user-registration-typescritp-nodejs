@@ -1,6 +1,6 @@
 ## NodeJS TypeScript TypeORM and PostgresSQL
 
-This is a simple REST API to a user registration developed
+This is a simple REST API to a user registration developed with NodeJS TypeScript TypeORM and PostgresSQL
 
 # Pre-reqs
 - Install [Node.js](https://nodejs.org/en/)
