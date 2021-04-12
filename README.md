@@ -63,16 +63,16 @@ yarn dev
 
 - Get a user - GET: http://localhost:3001/users/:id
  
-  To get a user passe the id of the user on the url
+  To get a user passe the id of the user on the url, if the user are registered it returns the user in JSON format containing the fields id, name, email, created_at and updated_at
    
 - Create a user - POST: http://localhost:3001/users 
  
-  To create a user, the name and email fields must be passed. The email must be valid and different from the emails corresponding to the users registered in the database
+  To create a user, the name and email fields must be passed. The email must be valid and different from the emails corresponding to the users registered in the database, it returns the created user in JSON format containing the fields id, name, email, created_at and updated_at
 
 - Update a user - GET: http://localhost:3001/users/:id
 
-  To update a user, passe the id of the user on the url and passe the new name or new email. The email must be valid and different from the emails corresponding to the users registered in the database
+  To update a user, passe the id of the user on the url and passe the new name or new email. The email must be valid and different from the emails corresponding to the users registered in the database, if the user are registered it returns the user in JSON format containing the fields id, name, email, created_at and updated_at with the corresponding updated fields
 
 - Delete a user - GET: http://localhost:3001/users/:id
  
-  To delete a user passe the id of the user on the url
+  To delete a user passe the id of the user on the url, if the user are registered it returns a success JSON message
