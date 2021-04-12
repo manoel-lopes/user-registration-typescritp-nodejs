@@ -1,6 +1,6 @@
 ## NodeJS TypeScript TypeORM and PostgresSQL
 
-REST API developed with NodeJS TypeScript TypeORM and PostgresSQL
+This is a simple REST API to a user registration developed
 
 # Pre-reqs
 - Install [Node.js](https://nodejs.org/en/)
@@ -22,19 +22,36 @@ or
 
 yarn
 ```
-- Build and run the project
-```
-npm run dev
-
-or
-
-yarn dev
-```
 - Create a `.env` on the root of your project with your database access credentials
 ```
 DB_HOST = 'Your host'
 DB_USER = 'Your database username'
 DB_PASS = 'Your database password'
 DB_NAME = 'Your database name'
+```
+- Create your database using the terminal
+```
+psql -U <user-name>
+Password for user postgres: <password>
+create database <database-name>;
+```
+You can also use SQL Shell or pgAdmin to create your database, as your prefer
+
+- Create the users table
+```
+npm run typeorm migration:run
+
+or
+
+yarn typeorm migration:run
+```
+# Start the server
+- Run in development mode
+```
+npm run dev
+
+or
+
+yarn dev
 ```
 Navigate to `http://localhost:3001` using a API Client for REST like insomnia or postman
