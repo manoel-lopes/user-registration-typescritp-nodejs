@@ -1,19 +1,11 @@
-const ini = require('ini')
-const fs = require('fs')
-
-const {
-  host,
-  username,
-  password,
-  database
-} = ini.parse(fs.readFileSync('./env.ini', 'utf-8'))
+require('dotenv')
 
 module.exports = {
   type: 'postgres',
-  host,
-  username,
-  password,
-  database,
+  host: process.env.DB_HOST,
+  username: process.env.DB_USER,
+  password: process.env.DB_PASS,
+  database: process.env.DB_NAME,
   entities: ['./src/app/models/**.ts'],
   migrations: ['./src/db/migrations/**.ts'],
   cli: {
