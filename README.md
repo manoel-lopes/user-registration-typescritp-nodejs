@@ -1,6 +1,6 @@
-## Mongo Express Node TypeScript
+## NodeJS TypeScript TypeORM and PostgresSQL
 
-REST API developed with Node JS + TypeScript + Type ORM + PostgresSQL 
+REST API developed with NodeJS TypeScript TypeORM and PostgresSQL
 
 # Pre-reqs
 - Install [Node.js](https://nodejs.org/en/)
