@@ -63,10 +63,16 @@ yarn dev
 
 - Get a user - GET: http://localhost:3001/users/:id
  
-  To create a user, the name and email fields must be passed. The email must be valid and different from the emails corresponding to the users registered in the database
+- To get a user passe the id of the user on the url
      
 - Create a user - POST: http://localhost:3001/users 
-  
+ 
+  To create a user, the name and email fields must be passed. The email must be valid and different from the emails corresponding to the users registered in the database
+
 - Update a user - GET: http://localhost:3001/users/:id
 
+  To update a user, passe the id of the user on the url and passe the new name or new email. The email must be valid and different from the emails corresponding to the users registered in the database
+
 - Delete a user - GET: http://localhost:3001/users/:id
+ 
+  To delete a user passe the id of the user on the url
