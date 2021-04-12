@@ -10,11 +10,12 @@ REST API developed with Node JS + TypeScript + Type ORM + PostgresSQL
 # Getting started
 - Clone the repository
 ```
-git clone --depth=1 https://github.com/manoel-lopes/user-registration-typescript-nodejs.git
+git clone https://github.com/manoel-lopes/user-registration-typescript-nodejs.git
 ```
 - Install dependencies
 ```
 cd <project_name>
+
 npm i
 
 or
@@ -36,4 +37,4 @@ DB_USER = 'Your database username'
 DB_PASS = 'Your database password'
 DB_NAME = 'Your database name'
 ```
-Navigate to `http://localhost:3001`
+Navigate to `http://localhost:3001` using a API Client for REST like insomnia or postman
