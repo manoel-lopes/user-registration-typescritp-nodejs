@@ -63,12 +63,8 @@ yarn dev
 
 - Get a user - GET: http://localhost:3001/users/:id
  
-<<<<<<< HEAD
   To get a user passe the id of the user on the url
-=======
-- To get a user passe the id of the user on the url
->>>>>>> 1c0b343f94818bf0b2c6886df109d92aa4f13064
-     
+   
 - Create a user - POST: http://localhost:3001/users 
  
   To create a user, the name and email fields must be passed. The email must be valid and different from the emails corresponding to the users registered in the database
