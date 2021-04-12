@@ -31,9 +31,9 @@ DB_NAME = 'Your database name'
 ```
 - Create your database using the terminal
 ```
-psql -U <user-name>
+psql -U <user>
 Password for user postgres: <password>
-create database <database-name>;
+create database <database_name>;
 ```
 You can also use SQL Shell or pgAdmin to create your database, as your prefer
 
