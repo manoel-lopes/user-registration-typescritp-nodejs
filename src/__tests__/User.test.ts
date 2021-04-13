@@ -52,4 +52,14 @@ describe('Users', () => {
 
     expect(resp.status).toBe(400)
   })
+
+  it('Should be able to get all users', async() => {
+    await request(app).post('/users').send({
+      name: 'user2',
+      email: 'user2@email.com'
+    })
+    
+    const resp = await request(app).get('/users')
+    expect(resp.body.length).toBe(2)
+  })
 })
