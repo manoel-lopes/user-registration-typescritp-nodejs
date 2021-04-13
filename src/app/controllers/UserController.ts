@@ -4,26 +4,6 @@ import { getCustomRepository } from 'typeorm'
 import { UserRepository } from '../repositories/UserRepository'
 
 class UserController {
-  async index(_: Request, resp: Response) {
-    const userRepository = getCustomRepository(UserRepository)
-    
-    const users = await userRepository.find()
-
-    return resp.json(users)
-  }
-  
-  async show(req: Request, resp: Response) {
-    const { id } = req.params
-
-    const userRepository = getCustomRepository(UserRepository)
-
-    const user = await userRepository.findOne(id)
-    
-    return user
-      ? resp.json(user)
-      : resp.status(404).json({ error: 'User not found!' })
-  }
-
   async store(req: Request, resp: Response) {
     const { name = '', email = '' } = req.body
 
@@ -53,6 +33,27 @@ class UserController {
     await userRepository.save(user)    
     return resp.status(201).json(user)
   }
+
+  async index(_: Request, resp: Response) {
+    const userRepository = getCustomRepository(UserRepository)
+    
+    const users = await userRepository.find()
+
+    return resp.json(users)
+  }
+  
+  async show(req: Request, resp: Response) {
+    const { id } = req.params
+
+    const userRepository = getCustomRepository(UserRepository)
+
+    const user = await userRepository.findOne(id)
+    
+    return user
+      ? resp.json(user)
+      : resp.status(404).json({ error: 'User not found!' })
+  }
+
 
   async update(req: Request, resp: Response) {
     const { id } = req.params
