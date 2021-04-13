@@ -83,53 +83,14 @@ describe('Users', () => {
     const resp = await request(app).get(`/users/${uuid()}`)  
     expect(resp.status).toBe(404)
   })
-  
-  
-  // UPDATE
-  
-  it('Should be able to update a user', async() => {
-    const { body: { id } } = await request(app).post('/users').send({
-      name: 'user4',
-      email: 'user4@email.com'
-    })
+
     
-    const resp = await request(app).put(`/users/${id}`).send({
-      name: 'user5',
-      email: 'user5@email.com'
-    })
-
-    expect(resp.status).toBe(200)
-  })
-
-  it('Should not be able to update a user with exists email', async() => {
-    const { body: { id } } = await request(app).post('/users').send({
-      name: 'user6',
-      email: 'user6@email.com'
-    })
-    
-    const resp = await request(app).put(`/users/${id}`).send({
-      name: 'user5',
-      email: 'user5@email.com'
-    })
-
-    expect(resp.status).toBe(400)
-  })
-  
-  it('Should not be able to update a user with a not registered id', async() => {
-    const resp = await request(app).put(`/users/${uuid()}`).send({
-      name: 'user7',
-      email: 'user7@email.com'
-    })
-
-    expect(resp.status).toBe(404)
-  })
-
   // DELETE
   
   it('Should be able to delete a user', async() => {
     const { body: { id } } = await request(app).post('/users').send({
-      name: 'user8',
-      email: 'user8@email.com'
+      name: 'user6',
+      email: 'user6@email.com'
     })
     
     const resp = await request(app).delete(`/users/${id}`)  
