@@ -1,6 +1,7 @@
 import request from 'supertest'
-import { app } from '../app'
+import { v4 as uuid } from 'uuid'
 
+import { app } from '../app'
 import createConnection from '../db'
 
 describe('Users', () => {
