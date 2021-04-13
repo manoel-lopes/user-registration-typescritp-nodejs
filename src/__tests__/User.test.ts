@@ -28,7 +28,7 @@ describe('Users', () => {
     expect(resp.status).toBe(400)
   })
   
-  it('Should not be able to create a new user with a not valid email', async() => {
+  it('Should not be able to create a new user with a invalid email', async() => {
     const resp = await request(app).post('/users').send({
       name: 'user',
       email: 'useremail'
@@ -69,7 +69,7 @@ describe('Users', () => {
 
   // SHOW
   
-  it('Should be able to get a users', async() => {
+  it('Should be able to get a user', async() => {
     const { body: { id } } = await request(app).post('/users').send({
       name: 'user3',
       email: 'user3@email.com'
@@ -79,9 +79,26 @@ describe('Users', () => {
     expect(resp.status).toBe(200)
   })
   
-  it('Should not be able to get a users a with a not registered id', async() => {
-    const id = uuid()  
-    const resp = await request(app).get(`/users/${id}`)  
+  it('Should not be able to get a user with a not registered id', async() => {
+    const resp = await request(app).get(`/users/${uuid()}`)  
+    expect(resp.status).toBe(404)
+  })
+
+    
+  // DELETE
+  
+  it('Should be able to delete a user', async() => {
+    const { body: { id } } = await request(app).post('/users').send({
+      name: 'user6',
+      email: 'user6@email.com'
+    })
+    
+    const resp = await request(app).delete(`/users/${id}`)  
+    expect(resp.status).toBe(200)
+  })
+  
+  it('Should not be able to delete a user with a not registered id', async() => {
+    const resp = await request(app).delete(`/users/${uuid()}`)  
     expect(resp.status).toBe(404)
   })
 })
