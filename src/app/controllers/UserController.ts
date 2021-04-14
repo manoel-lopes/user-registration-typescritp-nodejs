@@ -68,8 +68,9 @@ class UserController {
     }
 
     const emailAlreadyRegistered = await userRepository.findOne({ email })
+    const isUserOwnEmail = email !== user.email
 
-    if (emailAlreadyRegistered) {
+    if (emailAlreadyRegistered && isUserOwnEmail) {
       return resp.status(400).json({ error: 'Email already in use!' })
     }
 
