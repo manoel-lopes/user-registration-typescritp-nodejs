@@ -24,9 +24,9 @@ class UserController {
       email
     })
 
-    const emailAlreadyRegistered = await userRepository.findOne({ email })
+    const userWithEmail = await userRepository.findOne({ email })
 
-    if (emailAlreadyRegistered) {
+    if (userWithEmail) {
       return resp.status(400).json({ error: 'Email already in use!' })
     }
 
@@ -67,9 +67,10 @@ class UserController {
       return resp.status(404).json({ error: 'User not found!' })
     }
 
-    const emailAlreadyRegistered = await userRepository.findOne({ email })
+    const userWithEmail = await userRepository.findOne({ email })
+    const isNotUserOwnEmail = email !== user.email
 
-    if (emailAlreadyRegistered) {
+    if (userWithEmail && isNotUserOwnEmail) {
       return resp.status(400).json({ error: 'Email already in use!' })
     }
 
