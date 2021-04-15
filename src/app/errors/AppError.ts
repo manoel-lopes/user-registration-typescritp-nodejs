@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-constructor */
 export class AppError {
   constructor(
         public readonly message: string,
