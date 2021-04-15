@@ -1,20 +1,13 @@
 import request from 'supertest'
-import { getConnection } from 'typeorm'
 import { v4 as uuid } from 'uuid'
 
-import { app } from '../../app'
-import createConnection from '../../db'
+import { app } from '../app'
+import createConnection from '../db'
 
 describe('Users', () => {
   beforeAll(async() => {
     const conn = await createConnection()
     await conn.runMigrations()
-  })
-
-  afterAll(async() => {
-    const conn = getConnection()
-    await conn.dropDatabase()
-    await conn.close()
   })
 
   // STORE
