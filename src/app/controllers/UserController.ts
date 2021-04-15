@@ -1,8 +1,8 @@
 import { Request, Response } from 'express'
 import { getCustomRepository } from 'typeorm'
-import { AppError } from '../errors/AppError'
 
 import { UserRepository } from '../repositories/UserRepository'
+import { AppError } from '../errors/AppError'
 
 class UserController {
   async store(req: Request, resp: Response) {
