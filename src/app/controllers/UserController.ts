@@ -11,7 +11,8 @@ class UserController {
     const userRepository = getCustomRepository(UserRepository)
 
     if (!name || !email) {
-      throw new AppError('Blank field not allowed!')
+      const field = !name ? 'name' : 'email'
+      throw new AppError(`Field ${field} can't be blank!`)
     }
 
     const isValidEmail = email.includes('@') && email.includes('.com')
