@@ -57,7 +57,6 @@ class UserController {
     return resp.json(user)
   }
 
-
   async update(req: Request, resp: Response) {
     const { id } = req.params
     const { name, email } = req.body
