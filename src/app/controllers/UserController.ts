@@ -18,7 +18,7 @@ class UserController {
     const isValidEmail = email.includes('@') && email.includes('.com')
 
     if (!isValidEmail) {
-      throw new AppError('Invalid email!')
+      throw new AppError('Email has invalid format!')
     }
     
     const user = userRepository.create({
@@ -29,7 +29,7 @@ class UserController {
     const userWithEmail = await userRepository.findOne({ email })
     
     if (userWithEmail) {
-      throw new AppError('Email already in use!')
+      throw new AppError('Email has already been taken!')
     }
 
     await userRepository.save(user)    
