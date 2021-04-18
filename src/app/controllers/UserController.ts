@@ -52,7 +52,7 @@ class UserController {
     const user = await userRepository.findOne(id)
     
     if (!user) {
-      throw new AppError('User not found!', 404)
+      throw new AppError('User, not found!', 404)
     }
 
     return resp.json(user)
@@ -67,7 +67,7 @@ class UserController {
     const user = await userRepository.findOne(id)
 
     if (!user) {
-      throw new AppError('User not found!', 404)
+      throw new AppError('User, not found!', 404)
     }
     
     const userWithEmail = await userRepository.findOne({ email })
@@ -95,7 +95,7 @@ class UserController {
     const user = await userRepository.findOne(id)
     
     if (!user) {
-      throw new AppError('User not found!', 404)
+      throw new AppError('User, not found!', 404)
     }
     
     await userRepository.delete(id)
