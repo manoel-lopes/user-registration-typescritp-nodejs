@@ -15,8 +15,8 @@ class UserController {
       throw new AppError(`Field ${field} can't be blank!`)
     }
 
-    const emailTester = /[\w.]+@[\w]+\.[a-z]+(\.[a-z]+)?$/i
-    const isValidEmail = emailTester.test(email)
+    const emailTest = /[\w.]+@[\w]+\.[a-z]+(\.[a-z]+)?$/i
+    const isValidEmail = emailTest.test(email)
 
     if (!isValidEmail) {
       throw new AppError('Email has invalid format!')
