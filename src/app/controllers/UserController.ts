@@ -5,7 +5,7 @@ import { UserRepository } from '../repositories/UserRepository'
 import { AppError } from '../errors/AppError'
 
 class UserController {
-  async store(req: Request, resp: Response) {
+  async create(req: Request, resp: Response) {
     const { name = '', email = '' } = req.body
 
     const userRepository = getCustomRepository(UserRepository)
