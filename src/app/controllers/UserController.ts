@@ -22,16 +22,16 @@ class UserController {
       throw new AppError('Email has invalid format!')
     }
 
-    const user = userRepository.create({
-      name,
-      email
-    })
-
     const userWithEmail = await userRepository.findOne({ email })
 
     if (userWithEmail) {
       throw new AppError('Email has already been taken!')
     }
+
+    const user = userRepository.create({
+      name,
+      email
+    })
 
     await userRepository.save(user)
     return resp.status(201).json(user)
